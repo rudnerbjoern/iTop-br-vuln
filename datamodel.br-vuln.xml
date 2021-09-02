@@ -23,6 +23,11 @@
                     <default_value />
                     <is_null_allowed>true</is_null_allowed>
                 </field>
+                <field id="cpe_os" xsi:type="AttributeString" _delta="define">
+                    <sql>cpe_os</sql>
+                    <default_value />
+                    <is_null_allowed>true</is_null_allowed>
+                </field>
 
                 <field id="cvss_score" xsi:type="AttributeDecimal" _delta="define">
                     <sql>cvss_score</sql>
@@ -104,6 +109,9 @@
                                         </item>
                                         <item id="fqdn_from_vulnscan" _delta="define">
                                             <rank>20</rank>
+                                        </item>
+                                        <item id="cpe_os" _delta="define">
+                                            <rank>30</rank>
                                         </item>
 
                                         <!-- Score and Count -->
