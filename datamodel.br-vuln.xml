@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<itop_design xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.6">
+    <!--
+    * @copyright   Copyright (C) 2021 Björn Rudner
+    * @license     https://www.gnu.org/licenses/gpl-3.0.en.html
+    -->
+    <classes>
+        <class id="IPAddress" _created_in="teemip-ip-mgmt" _delta="must_exist">
+            <fields>
+                <field id="vulnscan_assetid" xsi:type="AttributeString" _delta="define">
+                    <sql>vulnscan_assetid</sql>
+                    <default_value />
+                    <is_null_allowed>true</is_null_allowed>
+                </field>
+                <field id="last_vulnscan_date" xsi:type="AttributeDateTime" _delta="define">
+                    <sql>last_vulnscan_date</sql>
+                    <default_value />
+                    <is_null_allowed>true</is_null_allowed>
+                    <tracking_level>none</tracking_level>
+                </field>
+                <field id="fqdn_from_vulnscan" xsi:type="AttributeString" _delta="define">
+                    <sql>fqdn_from_vulnscan</sql>
+                    <default_value />
+                    <is_null_allowed>true</is_null_allowed>
+                </field>
+
+                <field id="cvss_score" xsi:type="AttributeDecimal" _delta="define">
+                    <sql>cvss_score</sql>
+                    <default_value />
+                    <is_null_allowed>true</is_null_allowed>
+                    <digits>3</digits>
+                    <decimals>1</decimals>
+                </field>
+
+                <field id="highvuln_count" xsi:type="AttributeInteger" _delta="define">
+                    <sql>highvuln_count</sql>
+                    <default_value />
+                    <is_null_allowed>true</is_null_allowed>
+                </field>
+
+                <field id="mediumvuln_count" xsi:type="AttributeInteger" _delta="define">
+                    <sql>mediumvuln_count</sql>
+                    <default_value />
+                    <is_null_allowed>true</is_null_allowed>
+                </field>
+
+                <field id="lowvuln_count" xsi:type="AttributeInteger" _delta="define">
+                    <sql>lowvuln_count</sql>
+                    <default_value />
+                    <is_null_allowed>true</is_null_allowed>
+                </field>
+
+                <field id="logvuln_count" xsi:type="AttributeInteger" _delta="define">
+                    <sql>logvuln_count</sql>
+                    <default_value />
+                    <is_null_allowed>true</is_null_allowed>
+                </field>
+            </fields>
+            <presentation>
+                <search _delta="must_exist">
+                    <items>
+                        <!-- do not show as default
+                        <item id="last_vulnscan_date" _delta="define">
+                            <rank>310</rank>
+                        </item>
+                        <item id="fqdn_from_vulnscan" _delta="define">
+                            <rank>320</rank>
+                        </item>
+
+
+                        <item id="cvss_score" _delta="define">
+                            <rank>330</rank>
+                        </item>
+
+                        <item id="highvuln_count" _delta="define">
+                            <rank>331</rank>
+                        </item>
+                        <item id="mediumvuln_count" _delta="define">
+                            <rank>332</rank>
+                        </item>
+                        <item id="lowvuln_count" _delta="define">
+                            <rank>333</rank>
+                        </item>
+                        <item id="logvuln_count" _delta="define">
+                            <rank>334</rank>
+                        </item>
+                    -->
+                    </items>
+                </search>
+            </presentation>
+        </class>
+        <class id="IPv4Address" _created_in="teemip-ip-mgmt" _delta="must_exist">
+            <presentation>
+                <details _delta="must_exist">
+                    <items>
+                        <item id="col:col3">
+                            <rank>10</rank>
+                            <items>
+                                <item id="fieldset:Class:IPAddress:vulnscaninfo" _delta="define">
+                                    <rank>20</rank>
+                                    <items>
+                                        <item id="last_vulnscan_date" _delta="define">
+                                            <rank>10</rank>
+                                        </item>
+                                        <item id="fqdn_from_vulnscan" _delta="define">
+                                            <rank>20</rank>
+                                        </item>
+
+                                        <!-- Score and Count -->
+                                        <item id="cvss_score" _delta="define">
+                                            <rank>330</rank>
+                                        </item>
+                                        <item id="highvuln_count" _delta="define">
+                                            <rank>331</rank>
+                                        </item>
+                                        <item id="mediumvuln_count" _delta="define">
+                                            <rank>332</rank>
+                                        </item>
+                                        <item id="lowvuln_count" _delta="define">
+                                            <rank>333</rank>
+                                        </item>
+                                        <item id="logvuln_count" _delta="define">
+                                            <rank>334</rank>
+                                        </item>
+                                    </items>
+                                </item>
+                            </items>
+                        </item>
+                    </items>
+                </details>
+                <search _delta="must_exist">
+                    <items>
+                        <!-- do not show as default
+                        <item id="last_vulnscan_date" _delta="define">
+                            <rank>310</rank>
+                        </item>
+                        <item id="fqdn_from_vulnscan" _delta="define">
+                            <rank>320</rank>
+                        </item>
+                        <item id="cvss_score" _delta="define">
+                            <rank>330</rank>
+                        </item>
+                        <item id="highvuln_count" _delta="define">
+                            <rank>331</rank>
+                        </item>
+                        <item id="mediumvuln_count" _delta="define">
+                            <rank>332</rank>
+                        </item>
+                        <item id="lowvuln_count" _delta="define">
+                            <rank>333</rank>
+                        </item>
+                        <item id="logvuln_count" _delta="define">
+                            <rank>334</rank>
+                        </item>
+                    -->
+                    </items>
+                </search>
+                <list _delta="must_exist">
+                    <items>
+                        <item id="cvss_score" _delta="define">
+                            <rank>330</rank>
+                        </item>
+                        <!-- do not show as default
+                        <item id="last_vulnscan_date" _delta="define">
+                            <rank>310</rank>
+                        </item>
+                        <item id="fqdn_from_vulnscan" _delta="define">
+                            <rank>320</rank>
+                        </item>
+                        <item id="highvuln_count" _delta="define">
+                            <rank>331</rank>
+                        </item>
+                        <item id="mediumvuln_count" _delta="define">
+                            <rank>332</rank>
+                        </item>
+                        <item id="lowvuln_count" _delta="define">
+                            <rank>333</rank>
+                        </item>
+                        <item id="logvuln_count" _delta="define">
+                            <rank>334</rank>
+                        </item>
+                    -->
+                    </items>
+                </list>
+            </presentation>
+        </class>
+    </classes>
+</itop_design>
